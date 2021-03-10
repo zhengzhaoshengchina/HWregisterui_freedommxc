@@ -70,7 +70,7 @@ div, ul, ol, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, t
     
 }
 .ljdl{
-    color:blue ;
+    color:#39F ;
 }
 .inputGroup{
     margin-top: 10px;
@@ -216,4 +216,59 @@ hr{
     margin-top: 100;
     margin-bottom: 30;
     color: grey;
+}
+.arrow-down:after {
+    transform: translateY(-.2em) rotate(
+135deg
+);
+    -webkit-transform: translateY(-.2em) rotate(
+135deg
+);
+}
+.arrow-down:after, .arrow-up:after {
+    content: '';
+    display: inline-block;
+    width: .6em;
+    height: .6em;
+    border-top: 2px solid;
+    border-right: 2px solid;
+}
+.arrow-up:after {
+    transform: translateY(.2em) rotate(
+-45deg
+);
+    -webkit-transform: translateY(.2em) rotate(
+-45deg
+);
+}
+.line:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 100%;
+    border-top: 1px solid #D8D8D8;
+}
+.line {
+    position: relative;
+    margin-bottom: 5px;
+}
+.hide {
+    display: none;
+}
+.tip-block {
+    margin: .8rem 0;
+}
+.learnMoreTitle {
+    color: #39F;
+    font-weight: 500;
+}
+.arrow-down, .arrow-up {
+    margin: 0 5px;
+}
+.unioncolor{
+    color: #39F;
+}
+.tip-block {
+    margin: .8rem 0;
 }

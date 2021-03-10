@@ -13,7 +13,7 @@
         <div id="top" class="top">
             <div class="languageChange">
                 <span id="currentLanguage" class="currentLanguage">{{currentLanguage}}</span>
-                <span id="currentLanguage" class="currentLanguage">↓</span>
+                <span id="languageArrow" class="arrow-down"></span>
                 <!-- <span id="currentLanguage" class="currentLanguage">↑</span> -->
             </div>
         </div>
@@ -59,14 +59,33 @@
                         </span>
                         <div class="checkbox-text-block mobileText">
                             <span>我已阅读并同意</span>
-                            <a href="javascript:void(0);">《华为云用户协议》</a>
+                            <a href="javascript:void(0);"><span class="unioncolor">《华为云用户协议》</span></a>
                             <span>和</span>
-                            <a href="javascript:void(0);">《隐私政策声明》</a>
+                            <a href="javascript:void(0);"><span class="unioncolor">《隐私政策声明》</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="inputGroup">
                     <input id="SUBMIT" class="button-red unactive" type="button" value="同意协议并注册" tabindex="11">
+                </div>
+                <div class="inputGroup line">
+                    <span>&nbsp;</span>
+                </div>
+                <div class="mobileText learnMoreTitle">
+                    <span>了解更多</span>
+                    <span id="learnMoreArrow" class="arrow-up"></span>
+                </div>
+                <div id="learnMoreTip" class="mobileText hide" style="display: block;">
+                    <div class="tip-block">
+                        <span>您当前注册的是华为云中国站账号，您还可以使用Email注册</span>
+                        <a href="https://reg.huaweicloud.com/registerui/intl/m/register.html"><span class="unioncolor">华为云国际站账号</span></a>
+                        <span>，适用于全球的组织、企业、以及中国企业的海外分部。</span>
+                    </div>
+                    <div class="tip-block">
+                        <span>访问</span>
+                        <a href="https://support.huaweicloud.com/usermanual-account/account_bi_0001.html"><span class="unioncolor">帮助中心</span></a>
+                        <span>，了解更多关于华为云国际站、华为云中国站的差异。</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,12 +106,6 @@
             el:'#top',
             data:{
                 currentLanguage:"简体中文"
-            }
-        })
-        var app = new Vue({
-            el:'#test',
-            data:{
-                message:"注册页面"
             }
         })
     </script>
