@@ -1,6 +1,5 @@
 body{
     margin: 0 auto;
-    text-align: center;
 }
 #outlayercontainer{
     left:0;
@@ -17,7 +16,7 @@ body{
     color: #fff;
 }
 .top{
-    background: url("/image/logo.svg") 15px no-repeat;
+    background: url("../image/logo.svg") 15px no-repeat;
 }
 .languageChange{
     text-align: right;
@@ -60,10 +59,6 @@ div, ul, ol, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, t
     font-weight: 600;
     letter-spacing: 0;
 }
-div, ul, ol, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote {
-    margin: 0;
-    padding: 0;
-}
 *, .button-red, .button-white, .inputBox, .popbox-btn, .popbox-btn-red, .select-region, body {
     box-sizing: border-box;
 }
@@ -90,9 +85,6 @@ div, ul, ol, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, t
 .inputBox, .ti-select-text {
     line-height: 43px;
 }
-*, .button-red, .button-white, .inputBox, .popbox-btn, .popbox-btn-red, .select-region, body {
-    box-sizing: border-box;
-}
 .area_code.active {
     color: #333;
 }
@@ -105,13 +97,6 @@ div, ul, ol, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, t
     white-space: nowrap;
     width: 85%;
     text-indent: 15px;
-}
-#callingCodeInput {
-    width: 25%;
-    border-right: 0;
-    float: left;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 #callingCodeInput {
     width: 25%;
@@ -135,4 +120,100 @@ div, ul, ol, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, t
 }
 .cancelleftborder{
     border-left: none;
+}
+.inputBeforeBtn {
+    border-right-color: #333;
+}
+.inputBtn {
+    border-color: #333;
+}
+#smsInput {
+    float: left;
+    width: 60%;
+}
+#msgBtn {
+    width: 40%;
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    border-left: none;
+}
+#cipher-strength span, #languageSwitch, #msgBtn, #right-nav, .after_send, .button-red, .button-white, .clear-img, .close-img, .country-toptext, .footer-login, .line, .msgBtnRed, .note-text-block, .pageTitle, .region-title, .ti-modal-footer, .title, .warning:before {
+    text-align: center;
+}
+.lan, body {
+    font-size: 14px;
+}
+element.style {
+    display: inline;
+    float: right;
+}
+.eye {
+    width: 30px;
+}
+.checkbox-group {
+    margin: 1rem 0;
+}
+.checkbox-block {
+    float: left;
+    position: relative;
+}
+.checkbox-img {
+    width: 17px;
+    height: 17px;
+}
+.checkbox-text-block {
+    margin-left: 28px;
+    overflow: hidden;
+}
+#check-agree {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    opacity: 0;
+}
+.button-red.unactive {
+    background-color: #dbdbdb;
+}
+.button-red.active {
+    background-color: #ff8080;
+}
+.button-red {
+    background-color: #ff8080;
+    color: #fff;
+    border: 0;
+    border: none;
+    height: 43px;
+}
+.button-red.unactive {
+    background-color: #dbdbdb;
+}
+.button-red {
+    background-color: #ff8080;
+    color: #fff;
+    border: 0;
+    border: none;
+    height: 43px;
+}
+.button-red, .button-white {
+    margin-top: 10px;
+    width: 100%;
+    font-size: large;
+    height: 43px;
+    display: block;
+    line-height: 43px;
+    border-radius: 4px;
+    -webkit-appearance: none;
+    outline: 0;
+}
+a{
+    text-decoration: none;
+}
+hrdiv
+hr{
+    margin-top: 100;
+    margin-bottom: 30;
+    color: grey;
 }
