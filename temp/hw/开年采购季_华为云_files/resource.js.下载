@@ -1,0 +1,1 @@
+define(["language/"+window.language+"/resource"],function(i18n){return i18n});

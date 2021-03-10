@@ -1,0 +1,33 @@
+body{
+    margin: 0 auto;
+    text-align: center;
+}
+#outlayercontainer{
+    left:0;
+    right:0;
+    margin:auto;
+    max-width: 480px;
+}
+#top{
+    position: relative;
+    height: 44px;
+    background-size: auto;
+    background-color: #252b3a;
+    line-height: 44px;
+    color: #fff;
+}
+.top{
+    background: url("/image/logo.svg") 15px no-repeat;
+}
+.languageChange{
+    text-align: right;
+    padding: 0 20px 0 0;
+    margin: 0;
+    font-family: sans-serif;
+    float: right;
+    font-size: 14px;
+}
+.upanddown{
+    float: right;
+    background: url("/image/down.png") 15px no-repeat;
+}
