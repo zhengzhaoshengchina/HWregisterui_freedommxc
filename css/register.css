@@ -31,3 +31,108 @@ body{
     float: right;
     background: url("/image/down.png") 15px no-repeat;
 }
+.content{
+    padding: 20px 4%;
+    min-height: calc(100% - 148px);
+}
+.content>div{
+    width: 100%;
+}
+.registerTitle {
+    font-size: 21px;
+}
+.registerTitle, .verifyTitle {
+    color: #222;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+div, ul, ol, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+.registerTitle {
+    font-size: 21px;
+    text-align: left;
+}
+.registerTitle, .verifyTitle {
+    color: #222;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+div, ul, ol, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote {
+    margin: 0;
+    padding: 0;
+}
+*, .button-red, .button-white, .inputBox, .popbox-btn, .popbox-btn-red, .select-region, body {
+    box-sizing: border-box;
+}
+.mobileText {
+    letter-spacing: 0;
+    font-size: 12px;
+    line-height: 15px;
+    word-wrap: break-word;
+    
+}
+.ljdl{
+    color:blue ;
+}
+.inputGroup{
+    margin-top: 10px;
+    overflow: hidden;
+}
+.inputBox {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 43px;
+    display: inline-block;
+}
+.inputBox, .ti-select-text {
+    line-height: 43px;
+}
+*, .button-red, .button-white, .inputBox, .popbox-btn, .popbox-btn-red, .select-region, body {
+    box-sizing: border-box;
+}
+.area_code.active {
+    color: #333;
+}
+.area_code, .regionCode {
+    font-size: 14px;
+    line-height: 43px;
+    display: inline-block;
+    color: #333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 85%;
+    text-indent: 15px;
+}
+#callingCodeInput {
+    width: 25%;
+    border-right: 0;
+    float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#callingCodeInput {
+    width: 25%;
+    border-right: 0;
+    float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#callingCodeInput, #notifyText, .button-red, .button-white, .regMobileBtn, .select-region {
+    vertical-align: middle;
+}
+.value-input {
+    border: 0;
+    font-size: 14px;
+    text-indent: 15px;
+    vertical-align: baseline;
+    outline: none;
+}
+.inputArea {
+    width: 95%;
+}
+.cancelleftborder{
+    border-left: none;
+}
