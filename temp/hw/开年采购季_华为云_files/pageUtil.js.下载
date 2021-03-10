@@ -1,1 +1,0 @@
-define("base/utils/pageUtil",[],function(){return{"setInvalid":function(id,isInvalid){isInvalid?$(id).addClass("inputBoxRed"):$(id).removeClass("inputBoxRed")},"isInvalid":function(id){return $(id).hasClass("inputBoxRed")},"isEmpty":function(str){return!(str&&0!==str.length)},"refreshPage":function($scope){try{$scope.$digest()}catch(e){}}}});

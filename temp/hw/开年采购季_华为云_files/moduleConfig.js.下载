@@ -1,1 +1,0 @@
-"use strict";(function(){require.config({"baseUrl":"//res.hc-cdn.com/register/6.2.209/registerui/","waitSeconds":0,"urlArgs":"ttl=1614240812974","paths":{"ui-router":"lib/angular-ui/ui-router","lazy-load":"lib","base":"base","language":"i18n","mobile":"cn/mobile","frame":"cn/framework"}})})();
