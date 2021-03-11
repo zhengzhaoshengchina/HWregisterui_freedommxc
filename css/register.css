@@ -37,14 +37,6 @@ body{
 .content>div{
     width: 100%;
 }
-.registerTitle {
-    font-size: 21px;
-}
-.registerTitle, .verifyTitle {
-    color: #222;
-    font-weight: 600;
-    letter-spacing: 0;
-}
 div, ul, ol, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote {
     margin: 0;
     padding: 0;

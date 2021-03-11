@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>华为云</title>
-<link rel="stylesheet" type="text/css" href="css/index.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>注册华为云账号</title>
+<link rel="stylesheet" type="text/css" href="css/register.css">
 <link rel="shortcut icon" href="image/favicon.ico">
 <script src="js/vue/vue.js"></script>
 </head>
 <body>
-    <h1>首页</h1>
+    <div id="outlayercontainer">
+        <div id="top" class="top">
+            <div class="languageChange">
+                <span id="currentLanguage" class="currentLanguage">{{currentLanguage}}</span>
+                <span id="languageArrow" class="arrow-down"></span>
+                <!-- <span id="currentLanguage" class="currentLanguage">↑</span> -->
+            </div>
+        </div>
+        <div id="content" class="content">
+            <div>
+                <div class="registerTitle">主页</div>    
+            
+        </div>
+    </div>
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    <script>
+        var app = new Vue({
+            el:'#top',
+            data:{
+                currentLanguage:"简体中文"
+            }
+        })
+    </script>
+    <script src="js/register.js"></script>
+    <script src="js/jquery/jquery-3.5.1.min.js"></script>
 </body>
-
-
-
-
-
 </html>
