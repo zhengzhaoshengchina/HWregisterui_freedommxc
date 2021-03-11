@@ -11,10 +11,13 @@
 </head>
 <body>
     <div id="outlayercontainer">
+        <!-- <button  v-on:click="cgl">test</button> -->
         <div id="top" class="top">
-            <div class="languageChange">
-                <span id="currentLanguage" class="currentLanguage">简体中文</span>
-                <span id="languageArrow" class="arrow-down"></span>
+            <!-- <button  v-on:click="cgl">test</button> -->
+            <div id="languageChange" class="languageChange">
+                <!-- <button  v-on:click="cgl">test</button> -->
+                <span id="currentLanguage" class="currentLanguage" v-on:click="cgl">简体中文</span>
+                <span id="languageArrow" v-bind:class="jiantou"></span>
             </div>
         </div>
         <div id="languageSwitch">
@@ -25,7 +28,7 @@
                 <div class="registerTitle">欢迎注册华为云（中国）</div>    
             </div>
             <div style="text-align: left;">
-                <span class="mobileText zleft">已有账号?&nbsp;<a class="ljdl">立即登录</a></span>
+                <span class="mobileText zleft">已有账号?&nbsp;<a class="ljdl" href="login.html">立即登录</a></span>
             </div>
             <div class="inputGroup">
                 <div id="callingCodeInput" class="inputBox inputBoxRed" style="width: 40%;">
@@ -93,28 +96,47 @@
             </div>
         </div>
     </div>
-
-    
-    
-    
-    
-
-
-
-
-
     
     <script>
         var out = new Vue({
             el:'#outlayercontainer',
             data:{
-                jiantou:"arrow-down",
-                englishchoice:"display: block;",
+                jiantou:'arrow-down',
+                englishchoice:'display:none',
             },
             methods:{
-
+                cgl(){
+                    if(this.jiantou=='arrow-down'){
+                        this.jiantou='arrow-up'
+                        this.englishchoice='display:block'
+                        tag=0;
+                    }else{
+                        this.jiantou='arrow-down'
+                        this.englishchoice='display:none'
+                    }
+                    
+                }
             }
-        }),
+        })
+
+        // var lc = new Vue({
+        //     el:'#languageChange',
+        //     data:{
+        //         jiantou:'arrow-down',
+        //     },
+        //     methods:{
+        //         cgl(){
+        //             if(this.jiantou=='arrow-down'){
+        //                 this.jiantou='arrow-up'
+        //                 // this.englishchoice='display:block'
+        //                 tag=0;
+        //             }else{
+        //                 this.jiantou='arrow-down'
+        //                 // this.englishchoice='display:none'
+        //             }
+        //         }
+        //     }
+        // })
 
         var app = new Vue({
             el:'#top',

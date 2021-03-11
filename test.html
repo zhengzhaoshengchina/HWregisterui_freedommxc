@@ -9,6 +9,7 @@
 <body>
     <div id="test">
         {{count}}
+        <span v-on:click="incrememnt">{{btnname}}</span>
         <button v-on:click="incrememnt">{{btnname}}</button>
     </div>
 
@@ -27,7 +28,7 @@
             },
             methods:{
                 incrememnt(){
-                    this.count++;
+                    this.count=10;
                 }
             }
         })
