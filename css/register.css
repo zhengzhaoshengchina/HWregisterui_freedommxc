@@ -264,3 +264,22 @@ hr{
 .tip-block {
     margin: .8rem 0;
 }
+#languageSwitch .languageSwitchCell {
+    display: block;
+    padding: 0 15px;
+    height: 30px;
+    background-color: #252b3a;
+}
+#languageSwitch {
+    position: absolute;
+    top: 44px;
+    right: 10px;
+    color: #fff;
+    border: 1px #fff;
+    z-index: 999;
+    background-color: #252b3a;
+    min-height: 30px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 14px;
+}

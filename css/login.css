@@ -1,0 +1,52 @@
+body{
+    margin: 0 auto;
+}
+#outlayercontainer{
+    left:0;
+    right:0;
+    margin:auto;
+    max-width: 480px;
+}
+#top{
+    position: relative;
+    height: 44px;
+    background-size: auto;
+    background-color: #252b3a;
+    line-height: 44px;
+    color: #fff;
+}
+.top{
+    background: url("../image/logo.svg") 15px no-repeat;
+}
+.languageChange{
+    text-align: right;
+    padding: 0 20px 0 0;
+    margin: 0;
+    font-family: sans-serif;
+    float: right;
+    font-size: 14px;
+}
+.upanddown{
+    float: right;
+    background: url("/image/down.png") 15px no-repeat;
+}
+.content{
+    padding: 20px 4%;
+    min-height: calc(100% - 148px);
+}
+.content>div{
+    width: 100%;
+}
+.registerTitle {
+    font-size: 21px;
+}
+.registerTitle, .verifyTitle {
+    color: #222;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+div, ul, ol, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote {
+    margin: 0;
+    padding: 0;
+}
+
