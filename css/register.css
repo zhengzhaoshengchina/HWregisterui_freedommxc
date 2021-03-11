@@ -166,11 +166,19 @@ element.style {
     top: 2px;
     opacity: 0;
 }
-.button-red.unactive {
+.button-red-unactive {
+    color: #fff;
+    border: 0;
+    border: none;
+    height: 43px;
     background-color: #dbdbdb;
 }
-.button-red.active {
+.button-red-active {
     background-color: #ff8080;
+    color: #fff;
+    border: 0;
+    border: none;
+    height: 43px;
 }
 .button-red {
     background-color: #ff8080;
