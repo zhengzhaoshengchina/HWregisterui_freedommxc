@@ -11,12 +11,13 @@
 </head>
 <body>
     <div id="outlayercontainer">
-        <!-- <button  v-on:click="cgl">test</button> -->
+        <!-- <span v-on:click="cgl">test</span> -->
         <div id="top" class="top">
             <!-- <button  v-on:click="cgl">test</button> -->
             <div id="languageChange" class="languageChange">
                 <!-- <button  v-on:click="cgl">test</button> -->
-                <span id="currentLanguage" class="currentLanguage" v-on:click="cgl">简体中文</span>
+                <span v-on:click="cgl">test</span>
+                <span id="currentLanguage" class="currentLanguage">简体中文</span>
                 <span id="languageArrow" v-bind:class="jiantou"></span>
             </div>
         </div>
@@ -63,7 +64,7 @@
                             <img id="CK" class="checkbox-img" src="./image/check-no.png" tabindex="10">
                             <input id="check-agree" type="checkbox">
                         </span>
-                        <div class="checkbox-text-block mobileText">
+                        <div id="ty" class="checkbox-text-block mobileText">
                             <span>我已阅读并同意</span>
                             <a href="javascript:void(0);"><span class="unioncolor">《华为云用户协议》</span></a>
                             <span>和</span>
@@ -99,7 +100,7 @@
     
     <script>
         var out = new Vue({
-            el:'#outlayercontainer',
+            el:'#languageChange',
             data:{
                 jiantou:'arrow-down',
                 englishchoice:'display:none',
@@ -143,6 +144,27 @@
             data:{
                 currentLanguage:"简体中文"
             }
+        })
+    </script>
+    <!-- <script>
+        function cgl2(){
+            var obj = document.querySelector("#currentLanguage");
+            var obj2 = document.querySelector("#languageSwitch");
+            // obj.className="arrow-up"
+            obj2.setAttributeNode("style","display:block")
+            
+        }
+    </script> -->
+    <script>
+        var app3 = new vue({
+            el:"#ty",
+            date:{
+
+            },
+            methods:{
+
+            }
+
         })
     </script>
     <script src="js/register.js"></script>

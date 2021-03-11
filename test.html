@@ -7,29 +7,32 @@
 <script src="js/vue/vue-router.js"></script>
 </head>
 <body>
-    <div id="test">
-        {{count}}
-        <span v-on:click="incrememnt">{{btnname}}</span>
-        <button v-on:click="incrememnt">{{btnname}}</button>
+
+    <div id="div1" width="300px" height="100%" style="color1">
+        <button v-on:click="cgc1">cgc1</button>
+    </div>
+
+    <div id="div2" style="color2">
+        <button v-on:click="cgc2">cgc2</button>
     </div>
 
     <script>
-        var app= new Vue({
-            el:'#test',
-            // data(){
-            //     return {
-            //         count:0,
-            //         btnname:"你点我啊！"
-            //     }
-            // },
+        var app1= new Vue({
+            el:'#div1',
             data:{
-                count:0,
-                btnname:"你点我啊！"
+                color1:"background-color: blue;"
             },
             methods:{
-                incrememnt(){
-                    this.count=10;
-                }
+
+            }
+        })
+        var app2= new Vue({
+            el:'#div2',
+            data:{
+                color1:"background-color: red;"
+            },
+            methods:{
+
             }
         })
     </script>
