@@ -14,7 +14,7 @@
         <div id="top" class="top">
             <div id="languageChange" class="languageChange">
                 <span id="currentLanguage" class="currentLanguage" v-on:click="cgl">简体中文</span>
-                <span id="languageArrow" v-bind:class="jiantou"></span>
+                <span id="languageArrow" v-bind:class="jiantou" v-on:click="cgl"></span>
             </div>
         </div>
         <div id="languageSwitch">
@@ -70,16 +70,16 @@
                 </div>
                 <div class="inputGroup">
                     <div id="alert" v-bind:style="errormessages"><span style="color: red;">{{errormessage}}</span></div>
-                    <input id="SUBMIT" class="button-red unactive" type="button" value="同意协议并注册" tabindex="11">
+                    <input id="SUBMIT" v-bind:class="[one,two]" type="button" value="同意协议并注册" tabindex="11">
                 </div>
                 <div class="inputGroup line">
                     <span>&nbsp;</span>
                 </div>
-                <div class="mobileText learnMoreTitle">
-                    <span>了解更多</span>
-                    <span id="learnMoreArrow" class="arrow-down"></span>
+                <div class="mobileText learnMoreTitle ljgd">
+                    <span v-on:click="lmf">了解更多</span>
+                    <span id="learnMoreArrow" v-bind:class="lmjt" v-on:click="lmf"></span>
                 </div>
-                <div id="learnMoreTip" class="mobileText hide" style="display: none;">
+                <div id="learnMoreTip" class="mobileText hide" v-bind:style="lm">
                     <div class="tip-block">
                         <span>您当前注册的是华为云中国站账号，您还可以使用Email注册</span>
                         <a href="https://reg.huaweicloud.com/registerui/intl/m/register.html"><span class="unioncolor">华为云国际站账号</span></a>
@@ -108,7 +108,10 @@
                 eyeimagurl:'./image/pwd_no.png',
                 eyeinputtype:'password',
                 chkimagurl:'./image/check-no.png',
-                unactive:true,
+                one:'button-red',
+                two:'unactive',
+                lm:'display: none',
+                lmjt:'arrow-down'
             },
             methods:{
                 cgl(){
@@ -136,10 +139,19 @@
                 chk(){
                     if(this.chkimagurl=='./image/check-no.png'){
                         this.chkimagurl='./image/check-ye.png'
-                        this.unactive='false'
+                        this.two='active'
                     }else{
                         this.chkimagurl='./image/check-no.png'
-                        this.unactive='true'
+                        this.two='unactive'
+                    }
+                },
+                lmf(){
+                    if(this.lm=='display: none'){
+                        this.lm='display: block'
+                        this.lmjt="arrow-up"
+                    }else{
+                        this.lm='display: none'
+                        this.lmjt="arrow-down"
                     }
                 }
             }
