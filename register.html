@@ -8,18 +8,18 @@
 <link rel="shortcut icon" href="image/favicon.ico">
 <script src="js/vue/vue.js"></script>
 <script src="js/vue/vue-router.js"></script>
-<script src="./js/axios.min.js"></script>
+<script src="js/axios.min.js"></script>
 </head>
 <body>
     <div id="outlayercontainer">
         <div id="top" class="top">
             <div id="languageChange" class="languageChange">
                 <span id="currentLanguage" class="currentLanguage" v-on:click="cgl">简体中文</span>
-                <span id="languageArrow" v-bind:class="alldata.jiantou" v-on:click="cgl"></span>
+                <span id="languageArrow" v-bind:class="jiantou" v-on:click="cgl"></span>
             </div>
         </div>
         <div id="languageSwitch">
-            <span class="languageSwitchCell" v-bind:style="alldata.englishchoice">English</span>
+            <span class="languageSwitchCell" v-bind:style="englishchoice">English</span>
         </div>
         <div id="content" class="content">
             <div>
@@ -34,14 +34,14 @@
                 </div>
                 <div id="phoneInput" class="inputBox cancelleftborder" style="width:60%">
                     <input id="phone" type="tel" class="value-input inputArea" tabindex="1"
-                    placeholder="请输入您的手机号" v-model="alldata.ztel" required @focus="cleanErr()">
+                    placeholder="请输入您的手机号" v-model="ztel" required @focus="cleanErr()">
                 </div>
             </div>
             <div class="inputGroup">
-                <div id="alert" v-bind:style="alldata.yzmmessages"><span style="color: green;">{{alldata.yzmmessage}}</span></div>
+                <div id="alert" v-bind:style="yzmmessages"><span style="color: green;">{{yzmmessage}}</span></div>
                 <div id="smsInput" class="inputBox inputBeforeBtn">
                     <input id="CODE" class="value-input" style="width:90%;margin-top:-3px" type="tel" tabindex="2"
-                    maxlength="6" placeholder="请输入短信验证码" v-model="alldata.zyzm" @focus="cleanErr()">
+                    maxlength="6" placeholder="请输入短信验证码" v-model="zyzm" @focus="cleanErr()">
                 </div>
                 <div id="msgBtn" class="inputBox inputBtn">
                     <span class="getCodeTxt"  v-on:click="yzm">获取验证码</span>
@@ -49,17 +49,17 @@
             </div>
             <div id="pwdGroup" class="inputGroup">
                 <div id="pwdInout" class="inputBox">
-                    <input id="PWD" class="value-input inputArea" style="width: 85%;" maxlength="32" v-bind:type="alldata.eyeinputtype" tabindex="9" 
-                    placeholder="请设置您的密码" autocomplete="off" v-model="alldata.zpassword" @focus="cleanErr()">
+                    <input id="PWD" class="value-input inputArea" style="width: 85%;" maxlength="32" v-bind:type="eyeinputtype" tabindex="9" 
+                    placeholder="请设置您的密码" autocomplete="off" v-model="zpassword" @focus="cleanErr()">
                     <div style="display:inline;float:right">
-                        <img id="EYE" style="margin-top:7px;margin-right:10px" v-bind:src="alldata.eyeimagurl" class="eye" v-on:click="cgeyeinptype">
+                        <img id="EYE" style="margin-top:7px;margin-right:10px" v-bind:src="eyeimagurl" class="eye" v-on:click="cgeyeinptype">
                     </div>
                 </div>
                 <div class="checkbox-group"></div>
                 <div class="ckeckbox-group">
                     <div class="declear">
                         <span class="checkbox-block">
-                            <img id="CK" class="checkbox-img" v-bind:src="alldata.chkimagurl" tabindex="10" v-on:click="chk">
+                            <img id="CK" class="checkbox-img" v-bind:src="chkimagurl" tabindex="10" v-on:click="chk">
                         </span>
                         <div id="ty" class="checkbox-text-block mobileText">
                             <span>我已阅读并同意</span>
@@ -70,17 +70,17 @@
                     </div>
                 </div>
                 <div class="inputGroup">
-                    <div id="alert" v-bind:style="alldata.errormessages"><span style="color: red;">{{alldata.errormessage}}</span></div>
-                    <input id="SUBMIT" v-bind:class="[alldata.one,alldata.two]" type="button" value="同意协议并注册" tabindex="11" @focus="zsubmit()">
+                    <div id="alert" v-bind:style="errormessages"><span style="color: red;">{{errormessage}}</span></div>
+                    <input id="SUBMIT" v-bind:class="[one,two]" type="button" value="同意协议并注册" tabindex="11" @focus="zsubmit()">
                 </div>
                 <div class="inputGroup line">
                     <span>&nbsp;</span>
                 </div>
                 <div class="mobileText learnMoreTitle ljgd">
-                    <span v-on:click="alldata.lmf">了解更多</span>
-                    <span id="learnMoreArrow" v-bind:class="alldata.lmjt" v-on:click="alldata.lmf"></span>
+                    <span v-on:click="lmf">了解更多</span>
+                    <span id="learnMoreArrow" v-bind:class="lmjt" v-on:click="lmf"></span>
                 </div>
-                <div id="learnMoreTip" class="mobileText hide" v-bind:style="alldata.lm">
+                <div id="learnMoreTip" class="mobileText hide" v-bind:style="lm">
                     <div class="tip-block">
                         <span>您当前注册的是华为云中国站账号，您还可以使用Email注册</span>
                         <a href="https://reg.huaweicloud.com/registerui/intl/m/register.html"><span class="unioncolor">华为云国际站账号</span></a>
@@ -100,109 +100,107 @@
         var out = new Vue({
             el:'#outlayercontainer',
             data:{
-                // jiantou:'arrow-down',
-                // jiantou:alldata.jiantou,
-                // englishchoice:'display:none',
-                // yzmmessages:'text-align:center;display:none',
-                // yzmmessage:'验证码是666666',
-                // errormessages:'text-align:center;display:none',
-                // errormessage:'密码错误',
-                // eyeimagurl:'./image/pwd_no.png',
-                // eyeinputtype:'password',
-                // chkimagurl:'./image/check-no.png',
-                // one:'button-red',
-                // two:'unactive',
-                // lm:'display: none',
-                // lmjt:'arrow-down',
-                // ztel:null,
-                // zyzm:null,
-                // zpassword:null,
-                alldata:{},
+                jiantou:'arrow-down',
+                englishchoice:'display:none',
+                yzmmessages:'text-align:center;display:none',
+                yzmmessage:'验证码是666666',
+                errormessages:'text-align:center;display:none',
+                errormessage:'密码错误',
+                eyeimagurl:'./image/pwd_no.png',
+                eyeinputtype:'password',
+                chkimagurl:'./image/check-no.png',
+                one:'button-red',
+                two:'unactive',
+                lm:'display: none',
+                lmjt:'arrow-down',
+                ztel:null,
+                zyzm:null,
+                zpassword:null,
+                // alldata:null,
             },
             methods:{
                 cgl(){
-                    if(this.alldata.jiantou=='arrow-down'){
-                        this.alldata.jiantou='arrow-up'
-                        this.alldata.englishchoice='display:block'
+                    if(this.jiantou=='arrow-down'){
+                        this.jiantou='arrow-up'
+                        this.englishchoice='display:block'
                     }else{
-                        this.alldata.jiantou='arrow-down'
-                        this.alldata.englishchoice='display:none'
+                        this.jiantou='arrow-down'
+                        this.englishchoice='display:none'
                     }
                     
                 },
                 yzm(){
-                    if(this.alldata.ztel==null){
-                        this.alldata.errormessage="请先输入手机号"
-                        this.alldata.errormessages='text-align:center;display:block'
+                    if(this.ztel==null){
+                        this.errormessage="请先输入手机号"
+                        this.errormessages='text-align:center;display:block'
                     }else{
-                        this.alldata.yzmmessages='text-align:center;display:block'
+                        this.yzmmessages='text-align:center;display:block'
                     }  
                 },
                 cgeyeinptype(){
-                    if(this.alldata.eyeimagurl=='./image/pwd_no.png'){
-                        this.alldata.eyeimagurl='./image/pwd_ye.png'
-                        this.alldata.eyeinputtype='text'
+                    if(this.eyeimagurl=='./image/pwd_no.png'){
+                        this.eyeimagurl='./image/pwd_ye.png'
+                        this.eyeinputtype='text'
                     }else{
-                        this.alldata.eyeimagurl='./image/pwd_no.png'
-                        this.alldata.eyeinputtype='password'
+                        this.eyeimagurl='./image/pwd_no.png'
+                        this.eyeinputtype='password'
                     }
                 },
                 chk(){
-                    if(this.alldata.chkimagurl=='./image/check-no.png'){
-                        this.alldata.chkimagurl='./image/check-ye.png'
-                        this.alldata.two='active'
-                        if(this.alldata.errormessage=="您尚未同意协议"){
-                            this.alldata.errormessages='text-align:center;display:none'
+                    if(this.chkimagurl=='./image/check-no.png'){
+                        this.chkimagurl='./image/check-ye.png'
+                        this.two='active'
+                        if(this.errormessage=="您尚未同意协议"){
+                            this.errormessages='text-align:center;display:none'
                         }
                     }else{
-                        this.alldata.chkimagurl='./image/check-no.png'
-                        this.alldata.two='unactive'
+                        this.chkimagurl='./image/check-no.png'
+                        this.two='unactive'
                     }
                 },
                 lmf(){
-                    if(this.alldata.lm=='display: none'){
-                        this.alldata.lm='display: block'
-                        this.alldata.lmjt="arrow-up"
+                    if(this.lm=='display: none'){
+                        this.lm='display: block'
+                        this.lmjt="arrow-up"
                     }else{
-                        this.alldata.lm='display: none'
-                        this.alldata.lmjt="arrow-down"
+                        this.lm='display: none'
+                        this.lmjt="arrow-down"
                     }
                 },
                 zsubmit(){
-                    if(this.alldata.chkimagurl=='./image/check-ye.png'){
+                    if(this.chkimagurl=='./image/check-ye.png'){
                         var m1='';
                         var m2='';
                         var m3='';
-                        if(this.alldata.ztel==null || this.alldata.ztel==''){m1="手机号为空 "}
-                        if(this.alldata.zyzm==null || this.alldata.zyzm==''){
+                        if(this.ztel==null || this.ztel==''){m1="手机号为空 "}
+                        if(this.zyzm==null || this.zyzm==''){
                             m2="验证码为空 "
-                        }else if(this.alldata.zyzm!='666666'){
+                        }else if(this.zyzm!='666666'){
                             m2="验证码错误 "
                         }
-                        if(this.alldata.zpassword==null || this.alldata.zpassword==''){
+                        if(this.zpassword==null || this.zpassword==''){
                             m3="密码为空"
                         }
-                        this.alldata.errormessage=m1+m2+m3
-                        if(this.alldata.errormessage==''){
+                        this.errormessage=m1+m2+m3
+                        if(this.errormessage==''){
                             window.location.href="index.html"
                         }else{
-                            this.alldata.errormessages='text-align:center;display:block'
+                            this.errormessages='text-align:center;display:block'
                         }
                     }else{
-                        this.alldata.errormessage="您尚未同意协议"
-                        this.alldata.errormessages='text-align:center;display:block'
+                        this.errormessage="您尚未同意协议"
+                        this.errormessages='text-align:center;display:block'
                     }
                 },
                 cleanErr(){
-                    this.alldata.errormessages='text-align:center;display:none'
-                },
-
+                    this.errormessages='text-align:center;display:none'
+                }
             },
-            mounted(){
-                axios
-                    .get('ctrl/register-CN.json')
-                    .then(response=>(this.alldata = response.data))
-            }
+            // mounted(){
+            //     axios  
+            //         .get('ctrl/register-CN.json')
+            //         .then(response=>(this.alldata=response.data))
+            // }
         })
     </script>
 </body>
