@@ -1,0 +1,18 @@
+{
+    "jiantou":"arrow-down",
+    "englishchoice":"display:none",
+    "yzmmessages":"text-align:center;display:none",
+    "yzmmessage":"验证码为666666",
+    "errormessages":"text-align:center;display:none",
+    "errormessage":"密码错误",
+    "eyeimagurl":"./image/pwd_no.png",
+    "eyeinputtype":"password",
+    "chkimagurl":"./image/check-no.png",
+    "one":"button-red",
+    "two":"unactive",
+    "lm":"display: none",
+    "lmjt":"arrow-down",
+    "ztel":null,
+    "zyzm":null,
+    "zpassword":null 
+}

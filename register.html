@@ -8,6 +8,7 @@
 <link rel="shortcut icon" href="image/favicon.ico">
 <script src="js/vue/vue.js"></script>
 <script src="js/vue/vue-router.js"></script>
+<script src="./js/axios.min.js"></script>
 </head>
 <body>
     <div id="outlayercontainer">
@@ -114,7 +115,24 @@
                 lmjt:'arrow-down',
                 ztel:null,
                 zyzm:null,
-                zpassword:null
+                zpassword:null,
+                alldata:null,
+                // jiantou=alldata.jiantou,
+                // englishchoice=alldata.englishchoice,
+                // yzmmessages=alldata.yzmmessages,
+                // yzmmessage=that.alldata.yzmmessage,
+                // errormessages=alldata.errormessages,
+                // errormessage=alldata.errormessage,
+                // eyeimagurl=alldata.eyeimagurl,
+                // eyeinputtype=alldata.eyeinputtype,
+                // chkimagurl=alldata.chkimagurl,
+                // one=alldata.one,
+                // two=alldata.two,
+                // lm=alldata.lm,
+                // lmjt=alldata.lmjt,
+                // ztel=alldata.ztel,
+                // zyzm=alldata.zyzm,
+                // zpassword=alldata.zpassword
             },
             methods:{
                 cgl(){
@@ -192,7 +210,49 @@
                 },
                 cleanErr(){
                     this.errormessages='text-align:center;display:none'
+                },
+                dataZH(){
+                    this.jiantou=alldata.jiantou,
+                    this.englishchoice=alldata.englishchoice,
+                    this.yzmmessages=alldata.yzmmessages,
+                    this.yzmmessage=that.alldata.yzmmessage,
+                    this.errormessages=alldata.errormessages,
+                    this.errormessage=alldata.errormessage,
+                    this.eyeimagurl=alldata.eyeimagurl,
+                    this.eyeinputtype=alldata.eyeinputtype,
+                    this.chkimagurl=alldata.chkimagurl,
+                    this.one=alldata.one,
+                    this.two=alldata.two,
+                    this.lm=alldata.lm,
+                    this.lmjt=alldata.lmjt,
+                    this.ztel=alldata.ztel,
+                    this.zyzm=alldata.zyzm,
+                    this.zpassword=alldata.zpassword
                 }
+            },
+            created(){
+                axios
+                    .get('ctrl/register-CN.json')
+                    .then(response=>(this.alldata = response.data))
+
+                // dataZH();
+                
+                // that.jiantou=alldata.jiantou,
+                // that.englishchoice=alldata.englishchoice,
+                // that.yzmmessages=alldata.yzmmessages,
+                // that.yzmmessage=that.alldata.yzmmessage,
+                // that.errormessages=alldata.errormessages,
+                // that.errormessage=alldata.errormessage,
+                // that.eyeimagurl=alldata.eyeimagurl,
+                // that.eyeinputtype=alldata.eyeinputtype,
+                // that.chkimagurl=alldata.chkimagurl,
+                // that.one=alldata.one,
+                // that.two=alldata.two,
+                // that.lm=alldata.lm,
+                // that.lmjt=alldata.lmjt,
+                // that.ztel=alldata.ztel,
+                // that.zyzm=alldata.zyzm,
+                // that.zpassword=alldata.zpassword
             }
         })
     </script>
