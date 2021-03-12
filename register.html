@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="inputGroup">
-                    <div id="alert" v-bind:style="alldata.errormessages"><span style="color: red;">{{errormessage}}</span></div>
+                    <div id="alert" v-bind:style="alldata.errormessages"><span style="color: red;">{{alldata.errormessage}}</span></div>
                     <input id="SUBMIT" v-bind:class="[alldata.one,alldata.two]" type="button" value="同意协议并注册" tabindex="11" @focus="zsubmit()">
                 </div>
                 <div class="inputGroup line">
@@ -102,31 +102,31 @@
             data:{
                 // jiantou:'arrow-down',
                 // jiantou:alldata.jiantou,
-                englishchoice:'display:none',
-                yzmmessages:'text-align:center;display:none',
-                yzmmessage:'验证码是666666',
-                errormessages:'text-align:center;display:none',
-                errormessage:'密码错误',
-                eyeimagurl:'./image/pwd_no.png',
-                eyeinputtype:'password',
-                chkimagurl:'./image/check-no.png',
-                one:'button-red',
-                two:'unactive',
-                lm:'display: none',
-                lmjt:'arrow-down',
-                ztel:null,
-                zyzm:null,
-                zpassword:null,
+                // englishchoice:'display:none',
+                // yzmmessages:'text-align:center;display:none',
+                // yzmmessage:'验证码是666666',
+                // errormessages:'text-align:center;display:none',
+                // errormessage:'密码错误',
+                // eyeimagurl:'./image/pwd_no.png',
+                // eyeinputtype:'password',
+                // chkimagurl:'./image/check-no.png',
+                // one:'button-red',
+                // two:'unactive',
+                // lm:'display: none',
+                // lmjt:'arrow-down',
+                // ztel:null,
+                // zyzm:null,
+                // zpassword:null,
                 alldata:{},
             },
             methods:{
                 cgl(){
-                    if(this.jiantou=='arrow-down'){
-                        this.jiantou='arrow-up'
-                        this.englishchoice='display:block'
+                    if(this.alldata.jiantou=='arrow-down'){
+                        this.alldata.jiantou='arrow-up'
+                        this.alldata.englishchoice='display:block'
                     }else{
-                        this.jiantou='arrow-down'
-                        this.englishchoice='display:none'
+                        this.alldata.jiantou='arrow-down'
+                        this.alldata.englishchoice='display:none'
                     }
                     
                 },
@@ -135,7 +135,7 @@
                         this.alldata.errormessage="请先输入手机号"
                         this.alldata.errormessages='text-align:center;display:block'
                     }else{
-                        this.yzmmessages='text-align:center;display:block'
+                        this.alldata.yzmmessages='text-align:center;display:block'
                     }  
                 },
                 cgeyeinptype(){
@@ -150,13 +150,13 @@
                 chk(){
                     if(this.alldata.chkimagurl=='./image/check-no.png'){
                         this.alldata.chkimagurl='./image/check-ye.png'
-                        this.two='active'
+                        this.alldata.two='active'
                         if(this.alldata.errormessage=="您尚未同意协议"){
                             this.alldata.errormessages='text-align:center;display:none'
                         }
                     }else{
                         this.alldata.chkimagurl='./image/check-no.png'
-                        this.two='unactive'
+                        this.alldata.two='unactive'
                     }
                 },
                 lmf(){
@@ -179,7 +179,7 @@
                         }else if(this.alldata.zyzm!='666666'){
                             m2="验证码错误 "
                         }
-                        if(this.zpassword==null || this.zpassword==''){
+                        if(this.alldata.zpassword==null || this.alldata.zpassword==''){
                             m3="密码为空"
                         }
                         this.alldata.errormessage=m1+m2+m3
@@ -202,27 +202,6 @@
                 axios
                     .get('ctrl/register-CN.json')
                     .then(response=>(this.alldata = response.data))
-
-                // dataZH();
-                
-                // that.jiantou=alldata.jiantou,
-                // that.englishchoice=alldata.englishchoice,
-                // that.yzmmessages=alldata.yzmmessages,
-                // that.yzmmessage=that.alldata.yzmmessage,
-                // that.errormessages=alldata.errormessages,
-                // that.errormessage=alldata.errormessage,
-                // that.eyeimagurl=alldata.eyeimagurl,
-                // that.eyeinputtype=alldata.eyeinputtype,
-                // that.chkimagurl=alldata.chkimagurl,
-                // that.one=alldata.one,
-                // that.two=alldata.two,
-                // that.lm=alldata.lm,
-                // that.lmjt=alldata.lmjt,
-                // that.ztel=alldata.ztel,
-                // that.zyzm=alldata.zyzm,
-                // that.zpassword=alldata.zpassword
-
-                // out.yzmmessage=this.alldata.yzmmessage;
             }
         })
     </script>
