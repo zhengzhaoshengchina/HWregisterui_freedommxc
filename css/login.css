@@ -18,18 +18,6 @@ body{
 .top{
     background: url("../image/logo.svg") 15px no-repeat;
 }
-.languageChange{
-    text-align: right;
-    padding: 0 20px 0 0;
-    margin: 0;
-    font-family: sans-serif;
-    float: right;
-    font-size: 14px;
-}
-.upanddown{
-    float: right;
-    background: url("/image/down.png") 15px no-repeat;
-}
 .content{
     padding: 20px 4%;
     min-height: calc(100% - 148px);
@@ -37,10 +25,10 @@ body{
 .content>div{
     width: 100%;
 }
-.registerTitle {
+.title{
     font-size: 21px;
 }
-.registerTitle, .verifyTitle {
+.title, .verifyTitle {
     color: #222;
     font-weight: 600;
     letter-spacing: 0;

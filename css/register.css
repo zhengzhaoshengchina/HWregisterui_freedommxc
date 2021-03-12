@@ -26,10 +26,6 @@ body{
     float: right;
     font-size: 14px;
 }
-.upanddown{
-    float: right;
-    background: url("/image/down.png") 15px no-repeat;
-}
 .content{
     padding: 20px 4%;
     min-height: calc(100% - 148px);
