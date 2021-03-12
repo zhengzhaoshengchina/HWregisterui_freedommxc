@@ -33,23 +33,23 @@
                 </div>
                 <div id="phoneInput" class="inputBox cancelleftborder" style="width:60%">
                     <input id="phone" type="tel" class="value-input inputArea" tabindex="1"
-                    placeholder="请输入您的手机号" required>
+                    placeholder="请输入您的手机号" v-model="ztel" required @focus="cleanErr()">
                 </div>
             </div>
             <div class="inputGroup">
                 <div id="alert" v-bind:style="yzmmessages"><span style="color: green;">{{yzmmessage}}</span></div>
                 <div id="smsInput" class="inputBox inputBeforeBtn">
                     <input id="CODE" class="value-input" style="width:90%;margin-top:-3px" type="tel" tabindex="2"
-                    maxlength="6" placeholder="请输入短信验证码">
+                    maxlength="6" placeholder="请输入短信验证码" v-model="zyzm" @focus="cleanErr()">
                 </div>
-                <div id="msgBtn" class="inputBox inputBtn" v-on:click="yzm">
-                    <span class="getCodeTxt">获取验证码</span>
+                <div id="msgBtn" class="inputBox inputBtn">
+                    <span class="getCodeTxt"  v-on:click="yzm">获取验证码</span>
                 </div>
             </div>
             <div id="pwdGroup" class="inputGroup">
                 <div id="pwdInout" class="inputBox">
                     <input id="PWD" class="value-input inputArea" style="width: 85%;" maxlength="32" v-bind:type="eyeinputtype" tabindex="9" 
-                    placeholder="请设置您的密码" autocomplete="off">
+                    placeholder="请设置您的密码" autocomplete="off" v-model="zpassword" @focus="cleanErr()">
                     <div style="display:inline;float:right">
                         <img id="EYE" style="margin-top:7px;margin-right:10px" v-bind:src="eyeimagurl" class="eye" v-on:click="cgeyeinptype">
                     </div>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="inputGroup">
                     <div id="alert" v-bind:style="errormessages"><span style="color: red;">{{errormessage}}</span></div>
-                    <input id="SUBMIT" v-bind:class="[one,two]" type="button" value="同意协议并注册" tabindex="11">
+                    <input id="SUBMIT" v-bind:class="[one,two]" type="button" value="同意协议并注册" tabindex="11" @focus="zsubmit()">
                 </div>
                 <div class="inputGroup line">
                     <span>&nbsp;</span>
@@ -111,7 +111,10 @@
                 one:'button-red',
                 two:'unactive',
                 lm:'display: none',
-                lmjt:'arrow-down'
+                lmjt:'arrow-down',
+                ztel:null,
+                zyzm:null,
+                zpassword:null
             },
             methods:{
                 cgl(){
@@ -125,7 +128,13 @@
                     
                 },
                 yzm(){
-                    this.yzmmessages='text-align:center;display:block'
+                    if(this.ztel==null){
+                        this.errormessage="请先输入手机号"
+                        this.errormessages='text-align:center;display:block'
+                    }else{
+                        this.yzmmessages='text-align:center;display:block'
+                    } 
+                    // this.yzmmessages='text-align:center;display:block'   
                 },
                 cgeyeinptype(){
                     if(this.eyeimagurl=='./image/pwd_no.png'){
@@ -153,6 +162,34 @@
                         this.lm='display: none'
                         this.lmjt="arrow-down"
                     }
+                },
+                zsubmit(){
+                    if(this.chkimagurl=='./image/check-ye.png'){
+                        var m1='';
+                        var m2='';
+                        var m3='';
+                        if(this.ztel==null || this.ztel==''){m1="手机号为空 "}
+                        if(this.zyzm==null || this.zyzm==''){
+                            m2="验证码为空 "
+                        }else if(this.zyzm!='666666'){
+                            m2="验证码错误 "
+                        }
+                        if(this.zpassword==null || this.zpassword==''){
+                            m3="密码为空"
+                        }
+                        this.errormessage=m1+m2+m3
+                        if(this.errormessage==''){
+                            window.location.href="index.html"
+                        }else{
+                            this.errormessages='text-align:center;display:block'
+                        }
+                    }else{
+                        this.errormessage="您尚未同意协议"
+                        this.errormessages='text-align:center;display:block'
+                    }
+                },
+                cleanErr(){
+                    this.errormessages='text-align:center;display:none'
                 }
             }
         })
