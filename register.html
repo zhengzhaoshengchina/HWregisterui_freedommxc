@@ -149,6 +149,9 @@
                     if(this.chkimagurl=='./image/check-no.png'){
                         this.chkimagurl='./image/check-ye.png'
                         this.two='active'
+                        if(this.errormessage=="您尚未同意协议"){
+                            this.errormessages='text-align:center;display:none'
+                        }
                     }else{
                         this.chkimagurl='./image/check-no.png'
                         this.two='unactive'
