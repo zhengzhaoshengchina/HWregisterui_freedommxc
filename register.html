@@ -16,7 +16,7 @@
         <div id="top" class="top">
             <div id="languageChange" class="languageChange">
                 <span id="currentLanguage" class="currentLanguage" v-on:click="cgl">{{configuredata.languagedes}}</span>
-                <span id="languageArrow" v-bind:class="jiantou"></span>
+                <span id="languageArrow" v-bind:class="jiantou" v-on:click="cgl"></span>
             </div>
         </div>
         <div id="languageSwitch">
@@ -116,7 +116,8 @@
                 zyzm:null,
                 zpassword:null,
                 //可配置内容 from /ctrl/register-CN.json
-                configuredata:null,
+                configuredata:{
+                }
             },
             methods:{
                 cgl(){
