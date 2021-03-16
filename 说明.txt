@@ -1,0 +1,2 @@
+因为使用了axios访问本地json文件，在项目文件夹直接点击打开register.html存在跨域问题，
+可使用VScode或者Hbuilder打开项目目录，再打开register.html,选择在浏览器中运行即可。
