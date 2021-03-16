@@ -14,43 +14,43 @@
     <div id="outlayercontainer">
         <div id="top" class="top">
             <div id="languageChange" class="languageChange">
-                <span id="currentLanguage" class="currentLanguage" v-on:click="cgl">简体中文</span>
+                <span id="currentLanguage" class="currentLanguage" v-on:click="cgl">{{configuredata.languagedes}}</span>
                 <span id="languageArrow" v-bind:class="jiantou" v-on:click="cgl"></span>
             </div>
         </div>
         <div id="languageSwitch">
-            <span class="languageSwitchCell" v-bind:style="englishchoice">English</span>
+            <span class="languageSwitchCell" v-bind:style="englishchoice">{{configuredata.languagedes2}}</span>
         </div>
         <div id="content" class="content">
             <div>
-                <div class="registerTitle">欢迎注册华为云（中国）</div>    
+                <div class="registerTitle">{{configuredata.maintitle}}</div>    
             </div>
             <div style="text-align: left;">
-                <span class="mobileText zleft">已有账号?&nbsp;<a class="ljdl" href="login.html">立即登录</a></span>
+                <span class="mobileText zleft">{{configuredata.yyzh}}&nbsp;<a class="ljdl" href="login.html">{{configuredata.ljdl}}</a></span>
             </div>
             <div class="inputGroup">
                 <div id="callingCodeInput" class="inputBox inputBoxRed" style="width: 40%;">
-                    <div id="modelCountryCode" class="area_code active" style="width:100%">+86（中国大陆）</div>
+                    <div id="modelCountryCode" class="area_code active" style="width:100%">{{configuredata.tellocation}}</div>
                 </div>
                 <div id="phoneInput" class="inputBox cancelleftborder" style="width:60%">
                     <input id="phone" type="tel" class="value-input inputArea" tabindex="1"
-                    placeholder="请输入您的手机号" v-model="ztel" required @focus="cleanErr()">
+                    v-bind:placeholder="configuredata.telplh" v-model="ztel" required @focus="cleanErr()">
                 </div>
             </div>
             <div class="inputGroup">
-                <div id="alert" v-bind:style="yzmmessages"><span style="color: green;">{{yzmmessage}}</span></div>
+                <div id="alert" v-bind:style="yzmmessages"><span style="color: green;">{{configuredata.yzmmessage}}</span></div>
                 <div id="smsInput" class="inputBox inputBeforeBtn">
                     <input id="CODE" class="value-input" style="width:90%;margin-top:-3px" type="tel" tabindex="2"
-                    maxlength="6" placeholder="请输入短信验证码" v-model="zyzm" @focus="cleanErr()">
+                    maxlength="6" v-bind:placeholder="configuredata.yzmplh" v-model="zyzm" @focus="cleanErr()">
                 </div>
                 <div id="msgBtn" class="inputBox inputBtn">
-                    <span class="getCodeTxt"  v-on:click="yzm">获取验证码</span>
+                    <span class="getCodeTxt"  v-on:click="yzm">{{configuredata.getymz}}</span>
                 </div>
             </div>
             <div id="pwdGroup" class="inputGroup">
                 <div id="pwdInout" class="inputBox">
                     <input id="PWD" class="value-input inputArea" style="width: 85%;" maxlength="32" v-bind:type="eyeinputtype" tabindex="9" 
-                    placeholder="请设置您的密码" autocomplete="off" v-model="zpassword" @focus="cleanErr()">
+                    v-bind:placeholder="configuredata.pasplh" autocomplete="off" v-model="zpassword" @focus="cleanErr()">
                     <div style="display:inline;float:right">
                         <img id="EYE" style="margin-top:7px;margin-right:10px" v-bind:src="eyeimagurl" class="eye" v-on:click="cgeyeinptype">
                     </div>
@@ -62,34 +62,34 @@
                             <img id="CK" class="checkbox-img" v-bind:src="chkimagurl" tabindex="10" v-on:click="chk">
                         </span>
                         <div id="ty" class="checkbox-text-block mobileText">
-                            <span>我已阅读并同意</span>
-                            <a href="javascript:void(0);"><span class="unioncolor">《华为云用户协议》</span></a>
-                            <span>和</span>
-                            <a href="javascript:void(0);"><span class="unioncolor">《隐私政策声明》</span></a>
+                            <span>{{configuredata.othertxt1}}</span>
+                            <a href="javascript:void(0);"><span class="unioncolor">{{configuredata.othertxt2}}</span></a>
+                            <span>{{configuredata.othertxt3}}</span>
+                            <a href="javascript:void(0);"><span class="unioncolor">{{configuredata.othertxt4}}</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="inputGroup">
-                    <div id="alert" v-bind:style="errormessages"><span style="color: red;">{{errormessage}}</span></div>
+                    <div id="alert" v-bind:style="errormessages"><span style="color: red;">{{configuredata.errormessage}}</span></div>
                     <input id="SUBMIT" v-bind:class="[one,two]" type="button" value="同意协议并注册" tabindex="11" @focus="zsubmit()">
                 </div>
                 <div class="inputGroup line">
                     <span>&nbsp;</span>
                 </div>
                 <div class="mobileText learnMoreTitle ljgd">
-                    <span v-on:click="lmf">了解更多</span>
+                    <span v-on:click="lmf">{{configuredata.othertxt5}}</span>
                     <span id="learnMoreArrow" v-bind:class="lmjt" v-on:click="lmf"></span>
                 </div>
                 <div id="learnMoreTip" class="mobileText hide" v-bind:style="lm">
                     <div class="tip-block">
-                        <span>您当前注册的是华为云中国站账号，您还可以使用Email注册</span>
-                        <a href="https://reg.huaweicloud.com/registerui/intl/m/register.html"><span class="unioncolor">华为云国际站账号</span></a>
-                        <span>，适用于全球的组织、企业、以及中国企业的海外分部。</span>
+                        <span>{{configuredata.othertxt6}}</span>
+                        <a href="https://reg.huaweicloud.com/registerui/intl/m/register.html"><span class="unioncolor">{{configuredata.othertxt7}}</span></a>
+                        <span>{{configuredata.othertxt8}}</span>
                     </div>
                     <div class="tip-block">
-                        <span>访问</span>
-                        <a href="https://support.huaweicloud.com/usermanual-account/account_bi_0001.html"><span class="unioncolor">帮助中心</span></a>
-                        <span>，了解更多关于华为云国际站、华为云中国站的差异。</span>
+                        <span>{{configuredata.othertxt9}}</span>
+                        <a href="https://support.huaweicloud.com/usermanual-account/account_bi_0001.html"><span class="unioncolor">{{configuredata.othertxt10}}</span></a>
+                        <span>{{configuredata.othertxt11}}</span>
                     </div>
                 </div>
             </div>
@@ -103,9 +103,7 @@
                 jiantou:'arrow-down',
                 englishchoice:'display:none',
                 yzmmessages:'text-align:center;display:none',
-                yzmmessage:'验证码是666666',
                 errormessages:'text-align:center;display:none',
-                errormessage:'密码错误',
                 eyeimagurl:'./image/pwd_no.png',
                 eyeinputtype:'password',
                 chkimagurl:'./image/check-no.png',
@@ -116,7 +114,8 @@
                 ztel:null,
                 zyzm:null,
                 zpassword:null,
-                // alldata:null,
+                //可配置内容 from /ctrl/register-CN.json
+                configuredata:null,
             },
             methods:{
                 cgl(){
@@ -131,7 +130,7 @@
                 },
                 yzm(){
                     if(this.ztel==null){
-                        this.errormessage="请先输入手机号"
+                        this.configuredata.errormessage=this.configuredata.telnotinputerror
                         this.errormessages='text-align:center;display:block'
                     }else{
                         this.yzmmessages='text-align:center;display:block'
@@ -150,7 +149,7 @@
                     if(this.chkimagurl=='./image/check-no.png'){
                         this.chkimagurl='./image/check-ye.png'
                         this.two='active'
-                        if(this.errormessage=="您尚未同意协议"){
+                        if(this.configuredata.errormessage==this.configuredata.prototalerror){
                             this.errormessages='text-align:center;display:none'
                         }
                     }else{
@@ -172,23 +171,23 @@
                         var m1='';
                         var m2='';
                         var m3='';
-                        if(this.ztel==null || this.ztel==''){m1="手机号为空 "}
+                        if(this.ztel==null || this.ztel==''){m1=this.configuredata.telnullerror}
                         if(this.zyzm==null || this.zyzm==''){
-                            m2="验证码为空 "
+                            m2=this.configuredata.yzmnullerror
                         }else if(this.zyzm!='666666'){
-                            m2="验证码错误 "
+                            m2=this.configuredata.yzmerror
                         }
                         if(this.zpassword==null || this.zpassword==''){
-                            m3="密码为空"
+                            m3=this.configuredata.passnullerror
                         }
-                        this.errormessage=m1+m2+m3
-                        if(this.errormessage==''){
+                        this.configuredata.errormessage=m1+m2+m3
+                        if(this.configuredata.errormessage==''){
                             window.location.href="index.html"
                         }else{
                             this.errormessages='text-align:center;display:block'
                         }
                     }else{
-                        this.errormessage="您尚未同意协议"
+                        this.configuredata.errormessage=this.configuredata.prototalerror
                         this.errormessages='text-align:center;display:block'
                     }
                 },
@@ -196,11 +195,12 @@
                     this.errormessages='text-align:center;display:none'
                 }
             },
-            // mounted(){
-            //     axios  
-            //         .get('ctrl/register-CN.json')
-            //         .then(response=>(this.alldata=response.data))
-            // }
+            mounted(){
+                //获取配置数据
+                axios  
+                    .get('ctrl/register-CN.json')
+                    .then(response=>(this.configuredata=response.data))
+            }
         })
     </script>
 </body>
